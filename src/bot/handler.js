@@ -7,7 +7,7 @@ module.exports = (message, config, client, Jimp) => {
             let commandFile = require("../commands/" + command + ".js");
             commandFile.run(client, message, args, config);
         } catch (err) {
-            message.channel.send(command + " to niepoprawna komenda!");
+            message.channel.send("Coś poszło źle. Spróbuj jeszcze raz sprawdzając czy poprawnie wpisałeś/aś komendę. Błąd: " + err);
         }
     }
 }
