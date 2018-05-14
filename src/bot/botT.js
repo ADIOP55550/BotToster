@@ -12,13 +12,13 @@ module.exports = class {
     }
 
     start() {
-        this.client.login(this.config.token);
+        this.client.login(process.env.BOT_TOKEN);
 
         this.client.on('ready', () => console.log("Ready!"));
 
         this.client.on('message', message => {
             if (message.author.bot) return;
-
+            
             if (message.content.startsWith(this.config.prefix)) {
                 this.handler(message, this.config, this.client, this.Jimp);
             }
