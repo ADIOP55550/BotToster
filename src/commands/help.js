@@ -3,13 +3,13 @@ const fs = require('fs');
 const firstline = require('firstline')
 exports.run = (client, message, args) => {
 
-    let message;
+    let msg;
 
     fs.readdir("./", (err, files) => {
         files.forEach(file => {
-            message += file + firstline(file);
+            msg += file + firstline(file);
         });
     })
 
-    message.channel.send(message);
+    message.channel.send(msg);
 }
