@@ -2,7 +2,7 @@ module.exports = (message, config, client, Jimp) => {
     const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase();     //komenda i argumenty
 
-    if (command != "_>" && command != "") {
+    if (command != "") {
         try {
             let commandFile = require("../commands/" + command + ".js");
             commandFile.run(client, message, args, config);
