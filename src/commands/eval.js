@@ -1,3 +1,4 @@
+// evaluje kod js (tylko dla Przemyka)
 var math = require('mathjs');
 exports.run = (client, message, args, config) => {
 
