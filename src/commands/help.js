@@ -5,12 +5,11 @@ exports.run = (client, message, args) => {
 
     let msg = "";
 
-    fs.readdir("./", (err, files) => {
+    fs.readdirSync("./", (err, files) => {
         files.forEach(file => {
-            msg += file
+            msg += file // + firstline(file);
         });
     })
 
-    console.log(msg);
     message.channel.send(msg);
 }
