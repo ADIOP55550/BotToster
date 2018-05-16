@@ -7,9 +7,10 @@ exports.run = (client, message, args) => {
 
     fs.readdir("./", (err, files) => {
         files.forEach(file => {
-            msg += file // + firstline(file);
+            msg += file
         });
     })
 
+    console.log(msg);
     message.channel.send(msg);
 }
