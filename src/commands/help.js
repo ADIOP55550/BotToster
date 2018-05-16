@@ -5,7 +5,7 @@ exports.run = (client, message, args) => {
     let files = "";
 
     fs.readdirSync("./src/commands/").forEach(file => {
-        console.log(fs.readFileSync("./src/commands/" + file, {encoding: string}));
+        console.log(fs.readFileSync("./src/commands/" + file, {encoding: "utf8"}));
         files += file.substring(0, file.length - 3) + " " /*+ fs.readFileSync("./src/commands/" + file).split("\n").shift() */+"\n";
     })
 
