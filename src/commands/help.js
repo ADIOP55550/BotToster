@@ -11,5 +11,6 @@ exports.run = (client, message, args) => {
         });
     })
 
+    console.log(msg);
     message.channel.send(msg);
 }
