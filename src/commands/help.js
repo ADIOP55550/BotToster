@@ -3,14 +3,14 @@ const fs = require('fs');
 const firstline = require('firstline')
 exports.run = (client, message, args) => {
 
-    let msg = "";
+    // let msg = "";
 
-    fs.readdirSync("./", (err, files) => {
-        files.forEach(file => {
-            msg += file // + firstline(file);
-        });
-    })
+    // fs.readdirSync("./", (err, files) => {
+    //     files.forEach(file => {
+    //         msg += file // + firstline(file);
+    //     });
+    // })
 
-    console.log(msg);
-    message.channel.send(msg);
+    console.log(fs.readdirSync("./"));
+    message.channel.send(fs.readdirSync("./"));
 }
