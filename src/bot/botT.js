@@ -23,32 +23,5 @@ module.exports = class {
                 this.handler(message, this.config, this.client, this.Jimp);
             }
         })
-
-        process.stdin.on('data', (data) => {
-
-            data = data.toString().trim();
-
-            if (data.startsWith("/say ")) {
-                this.wiadomosc = data.replace("/say ", "")
-                this.client.guilds.get(this.serwer).channels.get(this.kanal).send(this.wiadomosc);
-            }
-
-            if (data.startsWith("/serwer ")) {
-                this.serwer = data.replace("/serwer ", "")
-            }
-
-            if (data.startsWith("/kanal ")) {
-                this.kanal = data.replace("/kanal ", "")
-            }
-        
-            if (data.startsWith("/obrazek ")) {
-
-                this.wiadomosc = data.replace("/obrazek ", "")
-
-                this.client.guilds.get(this.serwer).channels.get(this.kanal).sendMessage({
-                    file: this.wiadomosc
-                });
-            }
-        })
     }
 }
