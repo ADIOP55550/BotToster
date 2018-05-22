@@ -2,9 +2,9 @@
 
 exports.run = (client, message, args) => {
     const roles = ["programowanie", "Informatyczny tost", "nauka", "kosmos"];
+    let roleName = args.join(" ");
 
     for (let pos in roles) {
-        let roleName = args.join(" ");
         if (roleName == "programowanie") roleName = "Informatyczny tost";
         if (roleName == "informatyczny tost") roleName = "Informatyczny tost";
         if (roleName == roles[pos]) {
@@ -16,6 +16,9 @@ exports.run = (client, message, args) => {
             }
 
             message.member.addRole(role.id);
+            return;
         }
     }
+
+    message.reply("rola `" + roleName + "` nie istnieje lub nie możesz jej sobie dodać!");
 };
