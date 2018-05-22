@@ -5,7 +5,9 @@ exports.run = (client, message, args) => {
 
     for (let pos in roles) {
         let roleName = args.join(" ");
+        message.reply(roleName);
         if (roleName == "programowanie") roleName = "informatyczny tost";
+        message.reply(roleName);
         if (roleName == roles[pos]) {
             const role = client.guilds.get("335070356941438977").roles.find("name", roleName);
 
