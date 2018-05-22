@@ -3,7 +3,7 @@
 exports.run = (client, message, args) => {
     const roles = ["programowanie", "informatyczny tost", "nauka", "kosmos"];
 
-    for (let pos of roles) {
+    for (let pos in roles) {
         if (args[0] == "programowanie") args[0] = "informatyczny tost";
         if (args[0] == roles[pos]) {
             let roleName = roles[pos];
