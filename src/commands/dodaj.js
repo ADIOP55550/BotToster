@@ -1,7 +1,7 @@
 // dodaje role
 
 exports.run = (client, message, args) => {
-    const roles = ["programowanie", "Informatyczny tost", "nauka", "kosmos"];
+    const roles = ["programowanie", "Informatyczny tost", "nauka", "kosmos", "quantum"];
     let roleName = args.join(" ");
 
     for (let pos in roles) {
