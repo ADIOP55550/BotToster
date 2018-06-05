@@ -9,6 +9,7 @@ module.exports = class {
         this.client = new this.Discord.Client();
         this.Jimp = require("jimp");
         this.handler = require("./handler.js");
+        this.autorole = require("../autofun/autorole.js");
     }
 
     start() {
@@ -18,10 +19,14 @@ module.exports = class {
 
         this.client.on('message', message => {
             if (message.author.bot) return;
-            
+
             if (message.content.toLowerCase().startsWith(this.config.prefix)) {
                 this.handler(message, this.config, this.client, this.Jimp);
             }
+        })
+
+        this.client.on('guildMemberAdd', member => {
+            this.autorole.addrole(member);
         })
     }
 }
