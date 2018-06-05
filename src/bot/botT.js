@@ -27,6 +27,7 @@ module.exports = class {
 
         this.client.on('guildMemberAdd', member => {
             this.autorole.addrole(member);
+            console.dir(this);
         })
     }
 }
