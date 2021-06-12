@@ -1,0 +1,3 @@
+# BotToster
+
+## ARCHIVED DUE TO INACTIVITY
